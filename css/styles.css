@@ -1,0 +1,181 @@
+html, body {
+    overflow-y: hidden;
+    overflow-x: hidden;
+    background-color: black;
+    height: 100%;
+    padding: 0;
+    margin: 0;
+}
+
+:root {
+    --cell-size: 150px;
+    --point-size: 20px;
+}
+
+#main_dice {
+    background-color: rgb(196, 196, 196);
+    width: var(--cell-size);
+    height: var(--cell-size);
+    position: absolute;
+    border-radius: 0.5rem;
+    border-width: 3px;
+    border-style: solid;
+    border-color: black;
+    margin: 0;
+    z-index: 3;
+    transform-origin: 50% 50%;
+}
+
+.basic_cell {
+    background-color: rgba(196, 196, 196, 0.5);
+    width: var(--cell-size);
+    height: var(--cell-size);
+    position: absolute;
+    border-width: 0px;
+    border-width: 3px;
+    border-style: solid;
+    border-color: white;
+    margin: 0;
+}
+
+.temp_cell {
+    background-color: rgb(100, 196, 196);
+    width: var(--cell-size);
+    height: var(--cell-size);
+    position: absolute;
+    border-width: 0px;
+    border-radius: 0.5rem;
+    border-width: 3px;
+    border-style: solid;
+    border-color: rgb(150, 196, 196);
+    margin: 0;
+    z-index: 10;
+}
+
+.end_cell {
+    background-color: rgba(196, 100, 100, 0.5);
+    width: var(--cell-size);
+    height: var(--cell-size);
+    position: absolute;
+    border-width: 0px;
+    border-radius: 0.5rem;
+    border-width: 3px;
+    border-style: solid;
+    border-color: black;
+    margin: 0;
+    z-index: 2;
+}
+
+.button_cell {
+    background-color: rgba(100, 105, 196, 0.5);
+    width: var(--cell-size);
+    height: var(--cell-size);
+    position: absolute;
+    border-width: 0px;
+    border-radius: 0.5rem;
+    border-width: 3px;
+    border-style: solid;
+    border-color: black;
+    margin: 0;
+    z-index: 2;
+}
+
+@keyframes moveRight {
+	to   {  transform: rotate(90deg) }
+}
+@keyframes moveRightAndDown {
+	to   {  transform: rotate(180deg) }
+}
+@keyframes moveLeft {
+	to   {  transform: rotate(-90deg) }
+}
+@keyframes moveLeftAndDown {
+	to   {  transform: rotate(-180deg) }
+}
+
+#bottom {
+    position: absolute;
+    bottom: 0%;
+    left: 50%;
+    transform: translate(-50%, 0%);
+    z-index: 7;
+    font-size: x-large;
+    text-align: center;
+}
+
+#top {
+    position: absolute;
+    top: 0%;
+    left: 50%;
+    transform: translate(-50%, 0%);
+    z-index: 7;
+    font-size: x-large;
+    text-align: center;
+}
+
+#left {
+    position: absolute;
+    left: 100%;
+    top: 50%;
+    transform: translate(-100%, -50%);
+
+    z-index: 7;
+    font-size: x-large;
+    text-align: center;
+}
+
+#right {
+    position: absolute;
+    right: 100%;
+    top: 50%;
+    transform: translate(100%, -50%);
+    z-index: 7;
+    font-size: x-large;
+    text-align: center;
+}
+
+.point {
+    position: absolute;
+    width: var(--point-size);
+    height: var(--point-size);
+    background-color: black;
+    border-radius: 50%;
+}
+
+#top_right {
+    top: 0%;
+    left: 100%;
+    transform: translate(-100%, 0%);
+}
+
+#top_left {
+    top: 0%;
+    left: 0%;
+    transform: translate(0%, 0%);
+}
+
+#bottom_left {
+    top: 100%;
+    left: 0%;
+    transform: translate(0%, -100%);
+}
+
+#bottom_right {
+    top: 100%;
+    left: 100%;
+    transform: translate(-100%, -100%);
+}
+
+#central_point {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.text_blob {
+    padding: 10px;
+    position: absolute;
+    color: white;
+    font-size: x-large;
+    font-family: sans-serif, ubuntu;
+}
